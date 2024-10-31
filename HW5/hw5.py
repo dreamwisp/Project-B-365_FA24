@@ -1,7 +1,7 @@
 import math
 def impurity(d, method="gini"):
-     
-    prob_d = [i for i in d.values()]
+    total = sum(d.values())
+    prob_d = [i / total if i >= 1 else i for i in d.values()]
     if method == 'gini':
         for i in range(len(prob_d)):
             prob_d[i] = prob_d[i] ** 2
